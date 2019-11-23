@@ -1,3 +1,29 @@
 .App {
-  text-align: center;
+    text-align: center;
+}
+
+.red {
+    color: coral;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.Button {
+    background-color: red;
+}
+
+.Button.Red {
+    background-color: blue;
+}
+
+.Button:hover {
+    background-color: green;
+}
+
+@media (max-width: 500px) {
+    .App {
+        width: 450px;
+    }
 }
