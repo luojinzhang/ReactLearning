@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import './User/UserInput'
 import UserInput from "./User/UserInput";
 import UserOutput from "./User/UserOutput";
+import Radium, {StyleRoot} from "radium";
 
 class App extends Component {
     constructor(props) {
@@ -22,14 +22,18 @@ class App extends Component {
     }
 
     render() {
+
+
         return (
-            <div className="App">
-                <UserInput username={this.state.username}
-                           change={this.changeUsernameHandler.bind(this)}/>
-                <UserOutput username={this.state.username}/>
-            </div>
+            <StyleRoot>
+                <div className="App" >
+                    <UserInput username={this.state.username}
+                               change={this.changeUsernameHandler.bind(this)}/>
+                    <UserOutput username={this.state.username}/>
+                </div>
+            </StyleRoot>
         );
     }
 }
 
-export default App;
+export default Radium(App);

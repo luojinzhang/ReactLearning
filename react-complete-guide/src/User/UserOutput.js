@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import "./css/UserOutput.css"
+import Radium from "radium";
 
 class UserOutput extends Component {
     p1 = {
@@ -7,8 +8,17 @@ class UserOutput extends Component {
     };
 
     render() {
+        const style = {
+            ':hover': {
+                backgroundColor: 'red',
+                color: 'yellow'
+            },
+            '@media (min-width: 300px)': {
+                backgroundColor: 'blue'
+            }
+        };
         return (
-            <div className="UserOutput">
+            <div className="UserOutput" style={style}>
                 <p className="UserOutputP1" style={this.p1}>Welcome</p>
                 <p className="UserOutputP2">{this.props.username}</p>
             </div>
@@ -16,4 +26,4 @@ class UserOutput extends Component {
     }
 }
 
-export default UserOutput;
+export default Radium(UserOutput);
